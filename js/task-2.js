@@ -24,3 +24,20 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const listTaskTwo = document.querySelector('.gallery');
+
+const createImageCard = imag => {
+  return `<li class="imag-item">
+            <img
+              src=${imag.url}
+              alt=${imag.alt}
+              width="360"
+              height= "240"
+            />
+          </li>`
+};
+
+const ImageCardTemplate = images.map(img => createImageCard(img)).join('');
+
+listTaskTwo.innerHTML = ImageCardTemplate;
