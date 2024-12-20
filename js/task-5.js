@@ -8,8 +8,10 @@ const widget = document.querySelector('.widget');
 const buttColor = document.querySelector('.change-color');
 const spanColor = document.querySelector('.color');
 
+
+spanColor.style.color = widget.parentNode.style.backgroundColor
+
 buttColor.addEventListener("click", () => {
-  const colorRandom = getRandomHexColor();
-  widget.parentNode.style.backgroundColor = colorRandom;
-   spanColor.style.color = colorRandom;
+  widget.parentNode.style.backgroundColor = getRandomHexColor();
+  spanColor.textContent = widget.parentNode.style.backgroundColor;
 });
